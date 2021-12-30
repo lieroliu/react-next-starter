@@ -4,7 +4,6 @@ import wrapper from '../../../modules';
 
 const Page = (props) => {
 	// const { chat, boundAdd } = useChat();
-    console.log(props)
 
 	return (
 		<div className={styles.container}>
@@ -20,13 +19,15 @@ const Page = (props) => {
 
 // preload data before page loading
 
-// Page.getInitialProps = wrapper.getInitialPageProps(
-// 	(store) =>
-// 		({ pathname, req, res }) => {
-// 			console.log(pathname);
-// 			console.log(store);
-// 		}
-// );
+Page.getInitialProps = wrapper.getInitialPageProps(
+	(store) =>
+		({pathname, res, req, test}) => {
+			console.log('------------------------------------------------------------------');
+			console.log('pathname', pathname);
+			console.log('test', test);
+			console.log('------------------------------------------------------------------');
+		}
+);
 
 // preload data in server side
 
