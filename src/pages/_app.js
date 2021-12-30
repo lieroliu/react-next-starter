@@ -1,7 +1,7 @@
 import 'styles/globals.css';
 import React from 'react';
 import App from 'next/app';
-import wrapper, { initialiseStore } from 'src/modules';
+import wrapper, { initialiseStore } from 'Modules';
 
 const WrappedApp = ({ Component, pageProps }) => <Component {...pageProps} />;
 
