@@ -1,11 +1,8 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import wrapper from '../modules';
-import { await_function } from '../modules/chat/action';
+import styles from 'styles/Home.module.css';
+import Link from 'next/link'
 
 const Home = (props) => {
-	console.log(props)
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -22,6 +19,12 @@ const Home = (props) => {
 				<p className={styles.description}>
 					Created by React/Redux/Next
 				</p>
+
+				<Link href="/chat">
+					<button>
+						<a>Chat</a>
+					</button>
+				</Link>
 			</main>
 
 			<footer className={styles.footer}>

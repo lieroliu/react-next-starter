@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import styles from '../../../styles/Home.module.css';
-import wrapper from '../../../modules';
+import styles from 'styles/Home.module.css';
+import wrapper from 'modules';
 
 const Page = (props) => {
 	// const { chat, boundAdd } = useChat();

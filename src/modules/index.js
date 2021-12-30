@@ -12,7 +12,7 @@ const middlewares = [thunkFSAMiddleware, promiseMiddleware];
 const localStorageState = {};
 let store;
 
-export const initialiseStore = (preloadedState) => {
+export const initialiseStore = () => {
 	let _store =
 		store ??
 		createStore(
@@ -21,8 +21,12 @@ export const initialiseStore = (preloadedState) => {
 			composeWithDevTools(applyMiddleware(...middlewares))
 		);
 
-	if (preloadedState && store) {
-		_store = createStore({ ...store.getState(), ...preloadedState });
+	if (store) {
+		_store = createStore(
+			reducers,
+			{ ...store.getState(), ...localStorageState },
+			composeWithDevTools(applyMiddleware(...middlewares))
+		);
 		store = undefined;
 	}
 
