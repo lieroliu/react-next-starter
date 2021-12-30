@@ -1,7 +1,6 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import wrapper from '../modules';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const WrappedApp = ({Component, pageProps}) => <Component {...pageProps} />;
 
-export default MyApp
+export default wrapper.withRedux(WrappedApp);
