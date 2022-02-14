@@ -4,6 +4,7 @@
         "paths": {
             "Modules": ["./src/modules"],
             "Pages": ["./src/pages"],
+            "Hooks": ["./src/hooks"],
         },
         "module": "commonjs",
         "target": "es6"

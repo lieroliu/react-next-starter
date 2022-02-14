@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 import wrapper from 'Modules';
+import { usePusher } from 'Hooks'
 
 const Page = (props) => {
 	// const { chat, boundAdd } = useChat();
+	const { server } = usePusher();
 
 	return (
 		<div className={styles.container}>
@@ -21,10 +23,9 @@ const Page = (props) => {
 
 Page.getInitialProps = wrapper.getInitialPageProps(
 	(store) =>
-		({pathname, res, req, test}) => {
+		(props) => {
 			console.log('------------------------------------------------------------------');
-			console.log('pathname', pathname);
-			console.log('test', test);
+			console.log('props', props);
 			console.log('------------------------------------------------------------------');
 		}
 );
